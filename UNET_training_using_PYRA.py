@@ -141,7 +141,7 @@ def prepare_data():
             transforms.ToTensor()
         ])
 
-    dataset_train = PolypsDatasetWithGridEncoding(opt.img_root_train, opt.mask_root_train, grid_sizes=[256], transforms= data_transforms)
+    dataset_train = PolypsDatasetWithGridEncoding(opt.img_root_train, opt.mask_root_train, grid_sizes=[2,4,8,16,32,64,128,256], transforms= data_transforms)
     dataset_val = PolypsDatasetWithGridEncoding(opt.img_root_val, opt.mask_root_val, grid_sizes=[256], transforms= data_transforms)
    
     print("dataset train=", len(dataset_train))
